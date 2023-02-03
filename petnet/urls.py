@@ -8,6 +8,7 @@ from core.views import front_page, about
 urlpatterns = [
     path("about/", about, name="about"),
     path("admin/", admin.site.urls),
+    path("", include("userprofile.urls")),
     path("", include("store.urls")),
     path("", front_page, name="frontpage"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
