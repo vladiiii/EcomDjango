@@ -27,6 +27,7 @@
 
         {% if request.user.is_authenticated %}
           <a href="{% url 'myaccount' %}" class="text-white">My Account</a>
+          <a href="{% url 'my_store' %}" class="text-white">My Store</a>
         {% endif %}
       </div>
     </nav>
