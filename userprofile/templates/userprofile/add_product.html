@@ -11,4 +11,8 @@
         {{ form.as_p }}
         <button class="py-4 px-8 bg-teal-500 text-white hover:bg-teal-800">Submit</button>
     </form>
+
+    {% if product %}
+        <a href="{% url 'delete_product' product.id %}" class="mt-2 inline-block py-4 px-8 bg-red-500 text-white">Delete Product</a>
+    {% endif %}
 {% endblock content %}
