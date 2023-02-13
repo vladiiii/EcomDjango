@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGGOUT_REDIRICT_URL = "frontpage"
 
 # Application definition
 
