@@ -48,6 +48,10 @@ class Cart:
 
         return int(sum(item["product"].price * item["quantity"] for item in self.cart.values())) / 100
 
+    def clear(self):
+        del self.session[settings.CART_SESSION_ID]
+        self.session.modified = True
+
     def remove(self, product_id):
         if product_id in self.cart:
             del self.cart[product_id]

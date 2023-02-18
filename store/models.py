@@ -74,3 +74,23 @@ class Product(models.Model):
         thumbnail = File(thumb_io, name=name)
 
         return thumbnail
+
+
+class Order(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    zipcode = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    is_paid = models.BooleanField(default=False)
+    paid_amount = models.IntegerField(blank=True, null=True)
+    merchant_id = models.CharField(max_length=255)
+    created_by = models.ForeignKey(User, related_name="orders", null=True, on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, related_name="items", on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name="items", on_delete=models.CASCADE)
+    price = models.IntegerField()
+    quantity = models.IntegerField(default=1)
