@@ -32,7 +32,7 @@ SESSION_COOKIE_AGE = 86400
 
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "myaccount"
-LOGGOUT_REDIRECT_URL = "frontpage"
+LOGOUT_REDIRECT_URL = "frontpage"
 
 # Application definition
 
@@ -59,6 +59,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "petnet.urls"
+
+WEBSITE_URL = "http://127.0.0.1:8000/"
+
+STRIPE_PUB_KEY = (
+    "pk_test_51MdxdLLqg8HfgyF92BLheNhuvFB2iJmqKOldsUH1TV2D3qRGHhRNtslXAQLRB4F3bqWLUIelFj9dlLrk08zGOoRK00tkC8Dcro"
+)
+STRIPE_SECRET_KEY = (
+    "sk_test_51MdxdLLqg8HfgyF9NRrbyGD8ylWlN2TVhaNfNpC2ckkEluviZmn2oO4T8dbiynuKO6aGVtBXqqYLmHVAL5QvbOPs00znnxenE1"
+)
 
 TEMPLATES = [
     {
