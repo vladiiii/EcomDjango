@@ -4,6 +4,18 @@
     {{product.title}}
 {% endblock title %}
 
+{% block meta %}
+<meta name="description" content="{{product.description}}">
+<meta name="author" content="Vladii">
+<meta property="og:title" content="PetNet | {{product.title}}">
+<meta property="og:description" content="{{product.description}}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://petnet.com{% url 'product_detail' product.category.slug product.slug %}">
+{% if product.image %}
+<meta product="og:image" content="http://petnet.com{% product.image.url %}">
+{% endif %}
+{% endblock meta %}
+
 {% block content %}
     {% if product.image %}
     <div class="image mb-4">
