@@ -84,7 +84,7 @@ class Order(models.Model):
     city = models.CharField(max_length=255)
     is_paid = models.BooleanField(default=False)
     paid_amount = models.IntegerField(blank=True, null=True)
-    payment_intent = models.CharField(max_length=255, null=True)
+    payment_intent = models.CharField(max_length=255, default="")
     created_by = models.ForeignKey(User, related_name="orders", null=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
 
